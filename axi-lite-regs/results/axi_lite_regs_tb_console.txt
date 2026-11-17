@@ -1,0 +1,36 @@
+--- Test 1: during reset
+PASS                              BVALID 00000000
+PASS                              RVALID 00000000
+--- Test 2: reset values
+PASS                                CTRL 00000000
+PASS                               DATA0 00000000
+PASS                               DATA1 00000000
+PASS                                  ID a9b00001
+PASS                         ID response 00000000
+--- Test 3: address and data in any order
+PASS           CTRL write, address first 00000000
+PASS             DATA0 write, data first 00000000
+PASS             DATA1 write, same clock 00000000
+PASS                                CTRL 11111111
+PASS                               DATA0 22222222
+PASS                               DATA1 33333333
+--- Test 4: master slow to take the response
+PASS             CTRL write, BREADY late 00000000
+PASS                   CTRL, RREADY late 44444444
+--- Test 5: write errors
+PASS                            write ID 00000002
+PASS              write 0x06 (unaligned) 00000002
+PASS           write 0x14 (out of range) 00000002
+PASS                        ID unchanged a9b00001
+PASS                     DATA0 unchanged 22222222
+--- Test 6: byte strobes
+PASS             DATA1 write, WSTRB 0101 00000000
+PASS                               DATA1 33bb33dd
+--- Test 7: read errors
+PASS                  read 0x10 response 00000002
+PASS                      read 0x10 data 00000000
+PASS                  read 0x0A response 00000002
+==========================================
+TEST PASSED
+==========================================
+$finish called at time : 965 ns
