@@ -1,0 +1,20 @@
+Random testbench: axi_lite_regs_random_tb.sv, Vivado 2025.2 simulator, 2000 transactions per run
+Seed set with -sv_seed in xsim.simulate.xsim.more_options
+
+Default seed:
+==========================================
+TEST PASSED: 2000 random transactions
+==========================================
+$finish called at time : 138195 ns
+
+-sv_seed 7:
+==========================================
+TEST PASSED: 2000 random transactions
+==========================================
+$finish called at time : 139775 ns
+
+-sv_seed 42:
+==========================================
+TEST PASSED: 2000 random transactions
+==========================================
+$finish called at time : 141835 ns
